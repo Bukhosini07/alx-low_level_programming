@@ -1,30 +1,23 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * main - prints all possible different ccombinations of two digits
- * Return: Always 0 (Succcess)
+ * print_to_98 - print all numbers from input to 98
+ * @n: the starting number
  */
 
-int main(void)
+void print_to_98(int n)
 {
-	int n, m;
-
-	for (n = 48; n <= 57; n++)
+	if (n >= 98)
 	{
-		for (m = 49; m <= 57; m++)
-		{
-			if (m > n)
-			{
-				putchar(n);
-				putchar(m);
-				if (n != 56 || m != 57)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
-		}
+		while (n > 98)
+			printf("%d, ", n--);
+		printf("%d\n", n);
 	}
-	putchar('\n');
-	return (0);
+	else
+	{
+		while (n < 98)
+			printf("%d, ", n++);
+		printf("%d\n", n);
+	}
 }
